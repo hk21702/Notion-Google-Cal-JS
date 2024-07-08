@@ -184,7 +184,7 @@ function syncFromGCal(c_name, fullSync, ignored_eIds) {
         e.message === "Sync token is no longer valid, a full sync is required." || e.message === "API call to calendar.events.list failed with error: Sync token is no longer valid, a full sync is required."
       ) {
         properties.deleteProperty("syncToken");
-        syncFromGCal(CALENDAR_IDS[c_name], true, ignored_eIds);
+        syncFromGCal(c_name, true, ignored_eIds);
         return;
       } else {
         throw new Error(e.message);
